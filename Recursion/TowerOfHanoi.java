@@ -12,3 +12,4 @@ public class TowerOfHanoi {
         towerOfHanoi(n - 1, aux, dest, source);
     }
 }
+// O(2^n) time complexity

@@ -11,3 +11,4 @@ public class isArraySorted {
         return arr[index - 1] < arr[index - 2] ? false : isArrayInSortedOrder(arr, index - 1);
     }
 }
+// O(n) Time complexity
