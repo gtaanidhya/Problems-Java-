@@ -10,6 +10,5 @@ public class TowerOfHanoi {
         towerOfHanoi(n - 1, source, aux, dest);
         System.out.println("Move disk from " + source + " to " + dest);
         towerOfHanoi(n - 1, aux, dest, source);
-
     }
 }
