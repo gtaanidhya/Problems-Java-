@@ -25,4 +25,3 @@ public class allBinaryStrings {
     }
 }
 
-// O(2^n) time complexity
