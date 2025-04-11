@@ -22,20 +22,20 @@ public class ArrayRotation {
             roattedArr[(i - x + n) % n] = arr[i];
         }
         return roattedArr;
-    } 
-    
+    }
+
     public static void rotateRightOptimal(int[] arr, int x) {
         rotateArray(arr, 0, arr.length - 1);
         rotateArray(arr, 0, x - 1);
         rotateArray(arr, x, arr.length - 1);
     }
-    
+
     public static void rotateLeftOptimal(int[] arr, int x) {
         rotateArray(arr, 0, arr.length - 1);
-        rotateArray(arr, 0, arr.length-x - 1);
+        rotateArray(arr, 0, arr.length - x - 1);
         rotateArray(arr, arr.length - x, arr.length - 1);
     }
-    
+
     public static void rotateArray(int[] arr, int start, int end) {
         while (start < end) {
             int temp = arr[start];
@@ -45,8 +45,21 @@ public class ArrayRotation {
             end--;
         }
     }
-    
-    
+
+    public void rotate(int[] nums, int k) {
+
+        int n = nums.length;
+        if (n <= 1) {
+            return;
+        }
+        if (k > n) {
+            k = n;
+        }
+
+        rotateArray(nums, 0, n - 1);
+        rotateArray(nums, 0, k - 1);
+        rotateArray(nums, k, n - 1);
+    }
 
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
