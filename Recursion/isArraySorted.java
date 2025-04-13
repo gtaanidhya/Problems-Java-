@@ -1,4 +1,3 @@
-//Backtracking problem
 
 public class isArraySorted {
     public static void main(String[] args) {
