@@ -6,26 +6,26 @@ public class checkCircularLL {
         int currPos = 1;
         ListNode temp = list.head;
         boolean circular = false;
-        while (temp != null && length != 0) {
-            if (temp.next != null ) {
-                currPos++;
+        while (temp != null && currPos <= length) {
+            if (temp.next != null) {
+                int internalPos = currPos + 1;
                 ListNode temp1 = temp.next;
-                int remainingLength = length - currPos;
-                while (temp1 != null && remainingLength != 0) {
-                    remainingLength--;
+                while (temp1 != null && internalPos <= length + 1) {
                     if (temp == temp1) {
                         circular = true;
                         break;
                     }
                     temp1 = temp1.next;
+                    internalPos++;
                 }
                 if (circular) {
                     break;
                 }
                 temp = temp.next;
-                length--;
             }
+            currPos++;
         }
+        
         return circular;
     }
 
@@ -42,7 +42,7 @@ public class checkCircularLL {
         ListNode temp = list.head;
         ListNode temp1=list.head;
         int pos=1;
-        while(pos<=3){
+        while (pos < 3) {
             temp1 = temp1.next;
             pos++;
         }
